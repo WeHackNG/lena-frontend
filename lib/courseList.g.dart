@@ -1,0 +1,20 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'courseList.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+CourseList _$CourseListFromJson(Map<String, dynamic> json) => CourseList(
+      json['title'] as String,
+      (json['courses'] as List<dynamic>)
+          .map((e) => Course.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$CourseListToJson(CourseList instance) =>
+    <String, dynamic>{
+      'title': instance.title,
+      'courses': instance.courses.map((e) => e.toJson()).toList(),
+    };
