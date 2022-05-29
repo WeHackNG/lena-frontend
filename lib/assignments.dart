@@ -11,7 +11,6 @@ class AssignmentPage extends StatefulWidget {
   @override
   State<AssignmentPage> createState() => _MyAssignmentPageState();
 
-
 }
 
 class _MyAssignmentPageState extends State<AssignmentPage> {
@@ -35,9 +34,14 @@ class _MyAssignmentPageState extends State<AssignmentPage> {
               child: Center(child: Text('Assignment ${entries[index]}')),
             );
           }
-
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => {},
+        tooltip: 'Increment Counter',
+        child: const Icon(Icons.add),
       )
 
     );
   }
 }
+

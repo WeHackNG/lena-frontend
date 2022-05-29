@@ -119,13 +119,12 @@ class _MyHomePageState extends State<MyHomePage> {
               // Create a grid with 2 columns. If you change the scrollDirection to
               // horizontal, this produces 2 rows.
               crossAxisCount: 2,
-              // Generate 100 widgets that display their index in the List.
               children: List.generate(snapshot.data!.courses.length, (index) {
                 return  Center(
                   child: Card(
                     child: InkWell(
                       splashColor: Colors.blue.withAlpha(30),
-                      onTap: () {
+                      onTap: () {  // click on a course
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => AssignmentPage(course: snapshot.data!.courses[index].title)),
@@ -142,12 +141,10 @@ class _MyHomePageState extends State<MyHomePage> {
                             ],
                           ))
                     ),
-
                   ),
                 );
             }),
           );
-
         },
 
       ),
