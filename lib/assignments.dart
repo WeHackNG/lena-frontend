@@ -14,8 +14,6 @@ class AssignmentPage extends StatefulWidget {
 }
 
 class _MyAssignmentPageState extends State<AssignmentPage> {
-
-
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -35,12 +33,17 @@ class _MyAssignmentPageState extends State<AssignmentPage> {
             );
           }
       ),
+      // + button to add new assignment
       floatingActionButton: FloatingActionButton(
-        onPressed: () => {},
+        onPressed: () => {
+          // add a new assignment to the assignment list
+          if (entries.isEmpty) entries.add(1),  // add to empty entry
+          entries.add(entries.last + 1),  // increment the last added assignment
+          setState(() {})  // refresh the page
+        },
         tooltip: 'Increment Counter',
         child: const Icon(Icons.add),
       )
-
     );
   }
 }
