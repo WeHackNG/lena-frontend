@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 final List<int> entries = <int>[1, 2, 3];
 
+
 class AssignmentPage extends StatefulWidget {
   const AssignmentPage({Key? key, required this.course}) : super(key: key);
 
@@ -27,9 +28,17 @@ class _MyAssignmentPageState extends State<AssignmentPage> {
           padding: const EdgeInsets.all(8),
           itemCount: entries.length,
           itemBuilder: (BuildContext context, int index) {
-            return SizedBox(
-              height: 50,
-              child: Center(child: Text('Assignment ${entries[index]}')),
+            return TextButton(
+            style: TextButton.styleFrom(
+            textStyle: const TextStyle(fontSize: 20),
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => NewAssignmentScreen()),
+              );
+            },
+            child: Center(child: Text('Assignment ${entries[index]}')),
             );
           }
       ),
@@ -48,3 +57,11 @@ class _MyAssignmentPageState extends State<AssignmentPage> {
   }
 }
 
+class NewAssignmentScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Assignment')),
+    );
+  }
+}
